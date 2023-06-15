@@ -1,11 +1,6 @@
-fruits = ["apkiwiple", "banana", "cherry", "kiwi", "mankiwigo"]
-# jl = [x for x in fruits if x!="banana"]
-# print(jl)
-#
-# bl = [ x.replace("kiwi", "grapes") for x in fruits]
+# a  = [x for x in range(1,1001) if x%8 == 0]
+# print(a)
 
-# print(l)
-# bl = [x for x in range(1,778) if x%7 == 0]
-# print(bl)
-
+# a = [x for x in range(1,1001) if "6" in str(x)]
+# print(a)
 
