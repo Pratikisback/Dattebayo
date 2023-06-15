@@ -4,4 +4,5 @@
 # a = [x for x in range(1,1001) if "6" in str(x)]
 # print(a)
 
-print("Yash gadha ha")
+print("Hello Moto")
+print("2nd attempt of changing")
