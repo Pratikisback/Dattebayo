@@ -1,5 +1,6 @@
 # a  = [x for x in range(1,1001) if x%8 == 0]
 # print(a)
+import pprint
 
 # a = [x for x in range(1,1001) if "6" in str(x)]
 # print(a)
@@ -100,12 +101,12 @@
 # print(li)
 
 #
-li = [(x, y) for x in range(1,101) for y in range(9, 2, -1) if x % y == 0 ]
-print(li)
-
-ll = [1, 2, 3, 4, 5, 6]
-a = max(ll)
-print(a)
+# li = [(x, y) for x in range(1,101) for y in range(9, 2, -1) if x % y == 0 ]
+# print(li)
+# #
+# ll = [1, 2, 3, 4, 5, 6]
+# a = max(ll)
+# print(a)
 
 # for x in range(1,1001):
 #
@@ -113,5 +114,167 @@ print(a)
 #         if x%y == 0:
 #             print(x,y)
 #             break
+
+# print("New Change")
+
+
+# dictio = {"INS": 67, "ST": 69, "AI":39, "WS": 63, "GP":45}
+# for k,v in dictio.items():
+#     # print(v)
+#     pass
 #
-print("New Change")
+#
+# a = "     git status     "
+# b = a.replace(" ", "")
+# print(b)
+#
+# c = a.strip(" ")
+# print(c)
+# #
+# matrix = [[2,1,5],
+#           [5,99,0],
+#           [33,2,4]]
+#
+# z = [max(x) for x in matrix ]
+# print(z)
+
+
+
+
+
+
+
+from pymongo import MongoClient
+client= MongoClient("mongodb://localhost:27017")
+db = client["PracticeDB"]
+collection = db["Restaurents"]
+
+# a = collection.find()
+# pprint.pprint(list(a))
+
+# b = collection.find({}, {"restaurant_id": 1, "name": 1, "borough": 1, "cuisine": 1})
+# pprint.pprint(list(b))
+
+# c = collection.find({}, {"restaurant_id": 1, "name": 1, "borough": 1, "cuisine": 1, "_id": 0})
+# pprint.pprint(list(c))
+
+# d = collection.find({}, {"restaurant_id": 1, "name": 1, "borough": 1, "cuisine": 1, "address.zipcode": 1, "_id": 0})
+# pprint.pprint(list(d))
+
+# e = collection.find({"borough": "Bronx"})
+# pprint.pprint(list(e))
+
+# f = collection.find({"borough": "Bronx"}).limit(5)
+# pprint.pprint(list(f))
+
+# g = collection.find({"borough": "Bronx"}).skip(5).limit(5)
+# pprint.pprint(list(g))
+
+# h = collection.find({"grades":{"$elemMatch":{"score": {"$gt": 90}}}})
+# pprint.pprint(list(h))
+
+# i = collection.find({"$and":[{"grades":{"$elemMatch":{"score": {"$gt": 80}}}}, {"grades": {"$elemMatch":{"score":{"$lt": 100}}}}]})
+# pprint.pprint(list(i))
+
+# j = collection.find({"address.coord": {"$lt": -95.754168}})
+# pprint.pprint(list(j))
+
+# k = collection.find({"cuisine": {"$ne": "American"}, "grades.score": {"$gt": 70}, "address.coord": {"$lt": -65.754168}})
+# pprint.pprint(list(k))
+
+
+#Could not solve
+# l = db.Restaurents.find({"cuisine": {"$ne": "American"}, "grades.grade": "A", "borough":{"$ne": "Brooklyn"}})
+# pprint.pprint(list(l))
+
+# m = collection.find({"name": {"$regex": "^Wil"}}, {"restaurant_id": 1, "borough":1, "cuisine": 1, "name": 1})
+# pprint.pprint(list(m))
+
+# n = collection.find({"name": {"$regex": "ces$"}}, {"restaurant_id": 1, "borough":1, "cuisine": 1, "name": 1})
+# pprint.pprint(list(n))
+
+
+#Could not solve
+# o = collection.find({"name": {"$regex": "/.*Reg.*/"}}, {"restaurant_id": 1, "borough":1, "cuisine": 1, "name": 1})
+# pprint.pprint(list(o))
+
+# p = collection.find({"borough":"Bronx", "$or":[{"cuisine":"American"}, {"cuisine": "Chinese"}]})
+# pprint.pprint(list(p))
+
+# q = collection.find({"borough": {"$nin":["Staten Island", "Bronx", "Queens", "Brooklyn"]}}, {"name": 1, "restaurant_id": 1, "borough": 1, "cuisine": 1})
+# pprint.pprint(list(q))
+
+# r = collection.find({"grades":{"$elemMatch":{"score": {"$lt": 10}}}},{"restaurant_id": 1, "name": 1, "borough": 1, "cuisine": 1, "grades.score":1})
+# pprint.pprint(list(r))
+
+
+#Not sure if written correctly
+# s = collection.find({"$or": [{"name":{"$ne": {"$regex": "^Wil"}}}, {"$and":[{"cuisine":{"$ne": "Chinese"}}, {"cuisene": {"$ne":"Chinese"}}]}]},
+#                     {"restaurant_id":1, "name": 1, "borough": 1,"cuisine":1})
+# pprint.pprint(list(s))
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+# a= collection.find({"$or":[{"weight": {"$gt": 160}}, {"height":{"$gt": 50}}]})
+# print(list(a))
+
+# b = collection.find()
+# # pprint.pprint(list(b))
+#
+# c = collection.find({"name": "Pratik"})
+# # pprint.pprint(list(c))
+#
+# d = collection.find({}, {"name": 1, "height": 1, "_id": 0})
+# # pprint.pprint(list(d))
+#
+# e = collection.find({"height": 169}, {"name": 1, "_id": 0} )
+# # pprint.pprint(list(e))
+#
+# #limit() can be used as head() used in pandas
+# f = collection.find({"name": "Pratik"}, {"height": 1, "weight": 1, "_id": 0, "name": 1}).limit(2)
+# # pprint.pprint(list(f))
+#
+# g = collection.find({"height": {"$gt": 169}})
+# # pprint.pprint(list(g))
+#
+# #skip() is used in mongo to skip documents as per the need to read
+# f = collection.find({"weight": {"$gt": 65}}).skip(3).limit(3)
+# # pprint.pprint(list(f))
+#
+# h = collection.find({"$and":[{"height": {"$gt": 165}}, {"height": {"$lt": 170}}]})
+# # pprint.pprint(list(h))
+#
+# i = collection.find_one({"name": "Vinay"})
+# # pprint.pprint(i)
+
+
+
+
+
+
