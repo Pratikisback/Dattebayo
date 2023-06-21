@@ -11,5 +11,6 @@ def reg_user(new_user):
     result = client.Employees.Users.insert_one(new_user)
     return result
 
-
-
+def rm_user(username):
+    result = client.Employees.Users.delete_one({"Username":username})
+    return result

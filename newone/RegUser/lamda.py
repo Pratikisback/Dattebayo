@@ -275,6 +275,33 @@ collection = db["Restaurents"]
 
 
 
+# print("Started again")
+
+# i = 1
+# while i<=5:
+#     i +=1
+#     print("Python")
+#
+
+# i = 1
+# j = 1
+# while i <= 5:
+#     i = i +1
+#     print("python")
+#     while j <= 5:
+#         j = j + 1
+#         print("evolves")
+
+
+
+
+
+
+
+
+
+
+
 
 
 
